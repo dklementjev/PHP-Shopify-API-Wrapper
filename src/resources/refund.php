@@ -94,31 +94,35 @@ return array(
                     "description" => "The ID of the order.",
                     "required" => true
                 ),
-                "shipping" => array(
+                "refund" => array(
                     "location" => "json",
                     "parameters" => array(
-                        "full_refund" => array(
-                            "type" => "boolean",
+                        "shipping" => array(
                             "location" => "json",
-                            "description" => ""
-                        )
-                    )
-                ),
-                "refund_line_items" => array(
-                    "location" => "json",
-                    "parameters" => array(
-                        "line_item_id" => array(
-                            "type" => "number",
-                            "location" => "json",
-                            "description" => ""
+                            "parameters" => array(
+                                "full_refund" => array(
+                                    "type" => "boolean",
+                                    "location" => "json",
+                                    "description" => ""
+                                )
+                            )
                         ),
-                        "quantity" => array(
-                            "type" => "number",
+                        "refund_line_items" => array(
                             "location" => "json",
-                            "description" => ""
+                            "parameters" => array(
+                                "line_item_id" => array(
+                                    "type" => "number",
+                                    "location" => "json",
+                                    "description" => ""
+                                ),
+                                "quantity" => array(
+                                    "type" => "number",
+                                    "location" => "json",
+                                    "description" => ""
+                                )
+                            )
                         )
                     )
-                )
             )
         )
     ),
