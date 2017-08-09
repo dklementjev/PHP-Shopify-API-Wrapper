@@ -369,7 +369,96 @@ return array(
                     "required" => true
                 )
             )
+        ),
+
+        /**
+         *     createAccountActivationUrl() method
+         *
+         *     reference: https://help.shopify.com/api/reference/customer
+         */
+        "createAccountActivationUrl" => array(
+            "httpMethod" => "POST",
+            "uri" => "/admin/customers/{id}/account_activation_url.json",
+            "summary" => "Create account activation URL",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+                "id" => array(
+                    "type" => "number",
+                    "location" => "uri",
+                    "description" => "Unique numeric identifier for the customer.",
+                    "required" => true
+                )
+            )
+        ),
+
+        /**
+         *     sendInvite() method
+         *
+         *     reference: https://help.shopify.com/api/reference/customer
+         */
+        "sendInvite" => array(
+            "httpMethod" => "POST",
+            "uri" => "/admin/customers/{id}/send_invite.json",
+            "summary" => "Send an invite",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+                "id" => array(
+                    "type" => "number",
+                    "location" => "uri",
+                    "description" => "Unique numeric identifier for the customer.",
+                    "required" => true
+                ),
+                "customer_invite" => array(
+                    "to" => array(
+                        "type" => "string",
+                        "location" => "json",
+                        "description" => "Recipient of the email."
+                    ),
+                    "from" => array(
+                        "type" => "string",
+                        "location" => "json",
+                        "description" => "Sender email address."
+                    ),
+                    "bcc" => array(
+                        "type" => "array",
+                        "location" => "json",
+                        "description" => "List of emails to BCC."
+                    ),
+                    "subject" => array(
+                        "type" => "string",
+                        "location" => "json",
+                        "description" => "The subject of the invitation."
+                    ),
+                    "custom_message" => array(
+                        "type" => "string",
+                        "location" => "json",
+                        "description" => "A custom message to include."
+                    ),
+
+                )
+            )
+        ),
+
+        /**
+         *     getCustomerOrders() method
+         *
+         *     reference: https://help.shopify.com/api/reference/customer
+         */
+        "getCustomerOrders" => array(
+            "httpMethod" => "GET",
+            "uri" => "/admin/customers/{id}/orders.json",
+            "summary" => "Retrieve a list of all the orders from a specific customer.",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+                "id" => array(
+                    "type" => "number",
+                    "location" => "uri",
+                    "description" => "Unique numeric identifier for the customer.",
+                    "required" => true
+                )
+            )
         )
+
     ),
 
     /*
