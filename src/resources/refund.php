@@ -103,6 +103,21 @@ return array(
                             "description" => ""
                         )
                     )
+                ),
+                "refund_line_items" => array(
+                    "location" => "json",
+                    "parameters" => array(
+                        "line_item_id" => array(
+                            "type" => "number",
+                            "location" => "json",
+                            "description" => ""
+                        ),
+                        "quantity" => array(
+                            "type" => "number",
+                            "location" => "json",
+                            "description" => ""
+                        )
+                    )
                 )
             )
         )
