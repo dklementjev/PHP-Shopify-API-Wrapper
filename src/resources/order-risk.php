@@ -43,7 +43,7 @@ return array(
         "getOrderRisk" => array(
             "httpMethod" => "GET",
             "uri" => "/admin/orders/{order_id}/risks/{id}.json",
-            "summary" => "Get a count of all pages.",
+            "summary" => "Retrieve a single Order Risk for a specific order.",
             "responseModel" => "defaultJsonResponse",
             "parameters" => array(
                 "order_id" => array(
@@ -60,8 +60,62 @@ return array(
                 )
             )
         ),
-        
-        
+
+        /**
+         *    createOrderRisk() method
+         *
+         *    reference: https://help.shopify.com/api/reference/order_risks
+         */
+        "createOrderRisk" => array(
+            "httpMethod" => "POST",
+            "uri" => "/admin/orders/{order_id}/risks.json",
+            "summary" => "Create an Order Risk entry.",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+	            "order_id" => array(
+                    "type" => "number",
+                    "location" => "uri",
+                    "description" => "The id of the order the order risk belongs to.",
+                    "required" => true
+                ),
+	            "risk" => array(
+		            "location" => "json",
+		            "parameters" => array(
+		                "message" => array(
+		                    "type" => "string",
+		                    "location" => "json",
+		                    "description" => "A message that should be displayed to the merchant to indicate the results of the fraud check."
+		                ),
+		                "recommendation" => array(
+		                    "type" => "string",
+		                    "location" => "json",
+		                    "description" => "The recommended action given to the merchant."
+		                ),
+		                "source" => array(
+		                    "type" => "string",
+		                    "location" => "json",
+		                    "description" => "This indicates the source of the risk assessment."
+		                ),
+		                "cause_cancel" => array(
+		                    "type" => "boolean",
+		                    "location" => "json",
+		                    "description" => "Use this flag when a fraud check is accompanied with a call to the Orders API to cancel the order. This will indicate to the merchant that this risk was severe enough to force cancellation of the order."
+		                ),
+		                "score" => array(
+		                    "type" => "string",
+		                    "location" => "json",
+		                    "description" => "A number between 0 and 1 indicating percentage likelihood of being fraud."
+		                ),
+		                "display" => array(
+		                    "type" => "boolean",
+		                    "location" => "json",
+		                    "description" => "States whether or not the risk is displayed. Valid values are \"true\" or \"false\"."
+		                )
+	                )
+                )
+            )
+        ),
+
         /**
          *    updateOrderRisk() method
          *
@@ -127,7 +181,7 @@ return array(
                 )
             )
         ),
-        
+
                
         /**
          *    deleteOrderRisk() method
