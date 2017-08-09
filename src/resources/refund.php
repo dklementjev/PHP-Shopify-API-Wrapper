@@ -95,14 +95,14 @@ return array(
                     "required" => true
                 ),
                 "shipping" => array(
-                    "type" => "string",
                     "location" => "json",
-                    "description" => "Set to TRUE to refund all remaining shipping."
-                ),
-                "refund_line_items" => array(
-                    "type" => "string",
-                    "location" => "json",
-                    "description" => "Set specific amount of shipping to refund. Takes precedence over full_refund."
+                    "parameters" => array(
+                        "full_refund" => array(
+                            "type" => "boolean",
+                            "location" => "json",
+                            "description" => ""
+                        )
+                    )
                 )
             )
         )
