@@ -97,16 +97,17 @@ return array(
                 "refund" => array(
                     "location" => "json",
                     "parameters" => array(
-                        "shipping" => array(
+                        "full_refund" => array(
                             "location" => "json",
-                            "type" => "string",
-                            "description" => ""
-                        ),
-                        "refund_line_items" => array(
-                            "location" => "json",
-                            "type" => "string",
+                            "type" => "boolean",
                             "description" => ""
                         )
+//                    ,
+//                        "refund_line_items" => array(
+//                            "location" => "json",
+//                            "type" => "string",
+//                            "description" => ""
+//                        )
                     )
                 )
             )
