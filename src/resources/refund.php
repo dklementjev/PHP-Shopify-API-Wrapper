@@ -25,12 +25,6 @@ return array(
             "summary" => "Retrieve a list of Refunds for an Order.",
             "responseModel" => "defaultJsonResponse",
             "parameters" => array(
-                "id" => array(
-                    "type" => "number",
-                    "location" => "uri",
-                    "description" => "The ID of the refund.",
-                    "required" => true
-                ),
                 "order_id" => array(
                     "type" => "number",
                     "location" => "uri",
