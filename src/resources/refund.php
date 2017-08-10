@@ -99,28 +99,13 @@ return array(
                     "parameters" => array(
                         "shipping" => array(
                             "location" => "json",
-                            "parameters" => array(
-                                "full_refund" => array(
-                                    "type" => "boolean",
-                                    "location" => "json",
-                                    "description" => ""
-                                )
-                            )
+                            "type" => "string",
+                            "description" => ""
                         ),
                         "refund_line_items" => array(
                             "location" => "json",
-                            "parameters" => array(
-                                "line_item_id" => array(
-                                    "type" => "number",
-                                    "location" => "json",
-                                    "description" => ""
-                                ),
-                                "quantity" => array(
-                                    "type" => "number",
-                                    "location" => "json",
-                                    "description" => ""
-                                )
-                            )
+                            "type" => "string",
+                            "description" => ""
                         )
                     )
                 )
