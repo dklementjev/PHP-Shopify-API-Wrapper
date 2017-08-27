@@ -23,7 +23,97 @@ return array(
             "httpMethod" => "GET",
             "uri" => "/admin/script_tags.json",
             "summary" => "Receive a list of all script tags.",
-            "responseModel" => "defaultJsonResponse"
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+                "limit" => array(
+                    "type" => "number",
+                    "location" => "query",
+                    "description" => "Amount of results (default: 50) (maximum: 250)."
+                ),
+                "page" => array(
+                    "type" => "number",
+                    "location" => "query",
+                    "description" => "Page to show (default: 1)."
+                ),
+                "since_id" => array(
+                    "type" => "number",
+                    "location" => "query",
+                    "description" => "Restrict results to after the specified ID."
+                ),
+                "created_at_min" => array(
+                    "type" => "string",
+                    "location" => "query",
+                    "description" => "Show script tags created after date (format: 2008-12-31 03:00)."
+                ),
+                "created_at_max" => array(
+                    "type" => "string",
+                    "location" => "query",
+                    "description" => "Show script tags created before date (format: 2008-12-31 03:00)."
+                ),
+                "updated_at_min" => array(
+                    "type" => "string",
+                    "location" => "query",
+                    "description" => "Show script tags last updated after date (format: 2008-12-31 03:00)."
+                ),
+                "updated_at_max" => array(
+                    "type" => "string",
+                    "location" => "query",
+                    "description" => "Show script tags last updated before date (format: 2008-12-31 03:00)."
+                ),
+                "src" => array(
+                    "type" => "string",
+                    "location" => "query",
+                    "description" => "Show script tags with a given URL"
+                ),
+                "fields" => array(
+                    "type" => "string",
+                    "location" => "query",
+                    "description" => "comma-separated list of fields to include in the response"
+                ),
+            )
+        ),
+
+       /**
+         *    getScriptCount method
+         *
+         *    reference: https://docs.shopify.com/api/uiintegrations/scripttag
+         */
+        "getScriptCount" => array(
+            "httpMethod" => "GET",
+            "uri" => "/admin/script_tags/count.json",
+            "summary" => "Get a count of all script tags for your shop.",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+                "src" => array(
+                    "type" => "string",
+                    "location" => "query",
+                    "description" => "Count script tags with given URL."
+                ),
+            )
+        ),
+
+       /**
+         *    getScriptTag() method
+         *
+         *    reference: https://docs.shopify.com/api/uiintegrations/scripttag
+         */
+        "getScriptTag" => array(
+            "httpMethod" => "GET",
+            "uri" => "/admin/script_tags/{id}.json",
+            "summary" => "Get a single script tags by its ID.",
+            "responseModel" => "defaultJsonResponse",
+            "parameters" => array(
+                "id" => array(
+                    "type" => "number",
+                    "location" => "uri",
+                    "description" => "The ID of the script tag."
+                ),
+                "fields" => array(
+                    "type" => "string",
+                    "location" => "query",
+                    "description" => "comma-separated list of fields to include in the response."
+                ),
+            )
         ),
 
        /**
@@ -43,12 +133,12 @@ return array(
                         "event" => array(
                             "type" => "string",
                             "location" => "json",
-                            "description" => "Should be onload"
+                            "description" => "The DOM event which triggers the loading of the script. Currently, \"onload\" is the only supported event."
                         ),
                         "src" => array(
                             "type" => "string",
                             "location" => "json",
-                            "description" => ""
+                            "description" => "The URL of the remote script."
                         )
                     )
                 )
