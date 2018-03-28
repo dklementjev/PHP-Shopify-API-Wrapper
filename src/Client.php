@@ -70,7 +70,12 @@ class Client
 	            "type" => "string",
 	            "location" => "header",
 	            "required" => false,
-	            "sentAs" => "application/json"
+	            "default" => "application/json"
+            ],
+            "Accept" => [
+                "type" => "string",
+                "location" => "header",
+                "default" =>"application/json; q=0.9, *"
             ],
             "X-Shopify-Access-Token" => [
                 "type" => "string",
