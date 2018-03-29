@@ -36,6 +36,13 @@ return array(
                 ),
             ),
         ),
+
+        "getAccessTokenScopes" => array(
+            "httpMethod" => "GET",
+            "uri" => "/admin/oauth/access_scopes.json",
+            "summary" => "Retrieve access token's scopes",
+            "responseModel" => "defaultJsonResponse"
+        )
     ),
     
      /*
