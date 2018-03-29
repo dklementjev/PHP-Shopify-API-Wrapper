@@ -139,6 +139,11 @@ return array(
                             "type" => "string",
                             "location" => "json",
                             "description" => "The URL of the remote script."
+                        ),
+                        "display_scope" => array(
+                            "type" => "string",
+                            "location" => "json",
+                            "default" => "all"
                         )
                     )
                 )
