@@ -70,6 +70,7 @@ return array(
         "shop",
         "script-tag",
         "smart-collection",
+        "storefront-access-token",
         "theme",
         "transaction",
         "user",
