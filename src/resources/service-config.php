@@ -73,6 +73,7 @@ return array(
         "storefront-access-token",
         "theme",
         "transaction",
+        "usage-charge",
         "user",
         "webhook",
         "shipping-zone"
